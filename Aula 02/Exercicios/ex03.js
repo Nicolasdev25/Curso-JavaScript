@@ -21,12 +21,23 @@ Saída:
 Seu IMC é: 22.86
 Você tem peso normal*/
 
-let peso = prompt("Digite seu peso em kg: ");
-let altura = prompt("Digite sua altura em metros: ");
-let imc = peso /(altura * altura);
+let peso = Number(prompt("Digite seu peso em kg: "));
+let altura = Number(prompt("Digite sua altura em metros: "));
 
-if(imc <= 18.5){
-  console.log(`Seu IMC e de: ${imc} \n Você está abaixo do peso`)
-}else if(imc >= 18.2 && imc <= 24,9 ){
-  console.log(`Seu IMC é: ${imc}`)
+let imc = peso / (altura * altura);
+
+if (imc < 18.5) {
+  alert(`Seu IMC é: ${imc.toFixed(2)}\nVocê está abaixo do peso`);
+} else if (imc >= 18.5 && imc <= 24.9) {
+  alert(`Seu IMC é: ${imc.toFixed(2)}\nVocê tem peso normal`);
+} else if (imc >= 25 && imc <= 29.9) {
+  alert(`Seu IMC é: ${imc.toFixed(2)}\nVocê está em sobrepeso`);
+} else if (imc >= 30 && imc <= 34.9) {
+  alert(`Seu IMC é: ${imc.toFixed(2)}\nObesidade grau 1`);
+} else if (imc >= 35 && imc <= 39.9) {
+  alert(`Seu IMC é: ${imc.toFixed(2)}\nObesidade grau 2`);
+} else if (imc >= 40) {
+  alert(`Seu IMC é: ${imc.toFixed(2)}\nObesidade grau 3`);
+} else {
+  alert("Dados inválidos");
 }
