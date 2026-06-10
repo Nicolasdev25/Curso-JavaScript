@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Métodos de Seleção</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        padding: 40px;
+        line-height: 1.6;
+      }
+
+      h1 {
+        color: #0057b7;
+        border-bottom: 2px solid #0057b7;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: #eb9915;
+        border-bottom: 2px solid #eb9915;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        background-color: #e1f5fe;
+        padding: 12px 16px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        margin-top: 20px;
+        padding-left: 20px;
+      }
+
+      li {
+        background-color: #fff3e0;
+        padding: 10px;
+        margin-bottom: 6px;
+        border-radius: 5px;
+        list-style-type: disc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="titulo">DOM</h1>
+    <p id="paragrafo">
+      O DOM é a sigla para
+      <strong>Document Object Model (Modelo de Objeto de Documento)</strong>,
+      uma interface de programação que representa um documento HTML, XML ou SVG
+      como uma estrutura de árvore lógica, onde cada parte do documento é um nó.
+    </p>
+
+    <h2>Tópicos importantes</h2>
+    <ul>
+      <li class="item" name="item">Seleção de elementos</li>
+      <li class="item" name="item">Manipulação de elementos</li>
+      <li class="item" name="item">Eventos</li>
+    </ul>
+
+    <script>
+      // forma inviavel
+      let textoTitulo = document.body.firstElementChild.textContent;
+      console.log(textoTitulo);
+
+      // seleconar pelo ID do elemento
+      //const h1 = document.getElementById("titulo"); // navegação do DOM
+      // const h1Texto = h1.textContent;
+
+      //console.log(h1);
+      //console.log(h1Texto);
+
+      //const p = document.getElementById("paragrafo");
+      //const pTexto = p.textContent;
+      //const pHtml = p.innerHTML;
+
+      //console.log(p);
+      //console.log(pTexto);
+      //console.log(pHtml);
+
+      //selecionar pela classe do elemento
+      //const itens = document.getElementsByClassName("item");
+      //const item1 = itens[0];
+      //const item1Texto = item1.textContent;
+
+      //console.log(itens);
+      //console.log(item1);
+      //console.log(item1Texto);
+
+      //selecionar pela TAG do elemento
+      //const itensTag = document.getElementsByTagName("li");
+      //const item2 = itensTag[1];
+      //const item2Texto = item2.textContent;
+
+      //console.log(itensTag);
+      //console.log(item2);
+      //.log(item2Texto);
+
+      // selecionar pelo NAME DO elemento
+      //const itensName = document.getElementsByName("item");
+      //const item3 = itensName[2];
+      //const item3Texto = item3.textContent;
+
+      //console.log(itensName);
+      //console.log(item3);
+      //console.log(item3Texto);
+
+      // metodos genericos
+      //const h1 = document.querySelector("#titulo");
+      //const h1Texto = h1.textContent;
+
+      //console.log(h1);
+      //console.log(h1Texto);
+
+      //const itens = document.querySelectorAll(".item");
+      //const item1 = itens[0];
+      //const item1Texto = item1.textContent;
+
+      //console.log(itens);
+      //console.log(item1);
+      //console.log(item1Texto);
+
+      // vantagem de usar node list
+      //itens.forEach((item, index)=> {
+      //console.log(`${index} - ${item.textContent}`);
+      //})
+
+      //manipulção do DOM
+      //const p = document.querySelector("#paragrafo");
+      //p.textContent = "O texto foi substituido! (textcontext)";
+      //p.innerHTML = "O texto foi substituído! (innerHTML)"; // > IMPORTANTE <
+
+      // EXEMPLO: MUDAR O TEXTO DO SEGUNDO ITEM DA LISTA PARA "TEXTO ALTERADO"
+
+      //const item2 = document.querySelectorAll(".item");
+      //const itens = document.querySelectorAll(".item");
+      //itens[1].textContent = "TEXTO ALTERADO";
+
+      // Manipulação de dom (Estilo)
+
+      const h1 = document.querySelector("#titulo");
+
+      h1.style.fontSize = "42px";
+      h1.style.backgroundColor = "#e1f5fe";
+      h1.style.padding = "10px";
+
+      const itens = document.querySelectorAll(".item");
+
+      itens.forEach((item, index) => (item.style.fontSize = "18px"));
+    </script>
+  </body>
+</html>
